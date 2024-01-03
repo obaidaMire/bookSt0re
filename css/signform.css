@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color-background: #0b1113de;
+  --main-color-background--hover: #f3ad52;
+  --main-transition: 0.3s;
+  --main-padding-top: 15px;
+  --main-padding-bottom: 15px;
+}
+
+/* start globale rules  */
+
+body {
+  font-family: "Philosopher", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) and (max-width: 1280px) {
+  .container {
+    width: 1090px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end globale rules  */
+/* start header  */
+.header {
+  position: relative;
+  background-color: var(--main-color-background);
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.header .container .logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  height: 72.73px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .container ul {
+  display: flex;
+}
+.header .container ul li a {
+  padding: 0 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  height: 72.73px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+}
+.header .container ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--main-color-background--hover);
+  bottom: 0;
+  left: -100px;
+  transition: var(--main-transition);
+}
+.header .container ul li a:hover::before {
+  left: 0;
+}
+.header .container ul li a:hover {
+  color: var(--main-color-background--hover);
+}
+
+/* end header  */
+
+.form {
+  position: relative;
+  background-color: #eee;
+}
+.form .container img {
+  width: 40%;
+}
+@media (max-width: 767px) {
+  .form .container img {
+    display: none;
+  }
+}
+.form .container {
+  height: calc(100vh - 72.73px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+form {
+  width: 400px;
+  background-color: var(--main-color-background);
+  padding: 30px;
+  border-radius: 25px;
+}
+.form form h1 {
+  text-align: center;
+  color: white;
+}
+.form .input-box {
+  width: 100%;
+  height: 50px;
+  margin: 25px 0;
+  position: relative;
+}
+.form .input-box input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 0px 36px 0px 10px;
+  border-bottom: 1px solid white;
+}
+.form .input-box input::placeholder {
+  color: white;
+  font-size: 15px;
+}
+.form .input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  background: linear-gradient(
+    151deg,
+    rgba(148, 138, 125, 1) 19%,
+    rgb(53, 46, 46) 92%
+  );
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 10px 0;
+  letter-spacing: 3px;
+	border-radius: 8px;
+}
+
+button:hover {
+  background: #eee;
+  color: black;
+  border-radius: 8px;
+}
+
+
+.form form .go {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.form form .go a {
+  color: white;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.username-er,
+.email-er,
+.pass-er,
+.pass2-er {
+  color: red;
+  margin-left: 5px;
+  padding-top: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  display: none;
+}
+.fill {
+  text-align: center;
+  color: red;
+  padding-top: 10px;
+  font-size: 20px;
+  display: none;
+}
